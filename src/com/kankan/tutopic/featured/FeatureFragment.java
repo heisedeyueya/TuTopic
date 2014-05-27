@@ -81,8 +81,10 @@ public class FeatureFragment extends BaseFragment {
             if (!isCancelled()) {
                 swipeContent.setRefreshing(false);
                 ImageFetcher fetcher = getImageFetcher();
-                FeatureedAdapter adapter = new FeatureedAdapter(result, fetcher);
-                staggeredGridView.setAdapter(adapter);
+                if (result != null) {
+                    FeatureedAdapter adapter = new FeatureedAdapter(result, fetcher);
+                    staggeredGridView.setAdapter(adapter);
+                }
             }
         }
     };

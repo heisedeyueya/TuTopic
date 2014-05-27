@@ -19,7 +19,6 @@ public class ImageAdapter extends PagerAdapter {
         this.context = context;
         this.fetcher = fetcher;
         this.topic = topic;
-
     }
 
     private String urls[] = {
@@ -75,10 +74,10 @@ public class ImageAdapter extends PagerAdapter {
         return view == object;
     }
 
-    @Override
-    public int getItemPosition(Object object) {
-        return POSITION_NONE;
-    }
+    // @Override
+    // public int getItemPosition(Object object) {
+    // return POSITION_NONE;
+    // }
 
     @Override
     public int getCount() {
