@@ -11,14 +11,12 @@ import android.widget.Toast;
 
 import com.blackmoon.tutopic.R;
 import com.kankan.logging.Logger;
-import com.kankan.tutopic.app.BaseApplication;
 import com.kankan.tutopic.base.BaseFragment;
 import com.kankan.tutopic.cache.ImageFetcher;
 import com.kankan.tutopic.data.DataProxy;
 import com.kankan.tutopic.data.Featured;
 import com.kankan.tutopic.data.Topic;
 import com.kankan.tutopic.detail.DetailActivity;
-import com.kankan.tutopic.util.UIHelper;
 import com.origamilabs.library.views.StaggeredGridView;
 import com.origamilabs.library.views.StaggeredGridView.OnItemClickListener;
 
@@ -62,10 +60,6 @@ public class FeatureFragment extends BaseFragment {
         staggeredGridView.setOnItemClickListener(onItemclickListener);
 
         swipeContent = (SwipeRefreshLayout) findViewById(R.id.swipe);
-        swipeContent.setColorScheme(android.R.color.holo_blue_bright,
-                android.R.color.holo_green_light,
-                android.R.color.holo_orange_light,
-                android.R.color.holo_red_light);
         swipeContent.setOnRefreshListener(refreshListener);
     }
 

@@ -30,6 +30,10 @@
             android:name="com.kankan.tutopic.detail.DetailActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.kankan.tutopic.imageviewer.ImgaeViewerActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,16 +1,23 @@
 package com.kankan.tutopic.detail;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ListView;
 
 import com.blackmoon.tutopic.R;
 import com.kankan.tutopic.base.BaseFragment;
 import com.kankan.tutopic.data.Topic;
+import com.kankan.tutopic.views.SwipeView;
 
 public class DetailFragment extends BaseFragment {
+    private SwipeView swipeView;
+    private ListView listView;
+    private Topic topic;
+    private CommentAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_detail, container, false);
@@ -19,10 +26,28 @@ public class DetailFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         Bundle args = getArguments();
-        Topic topic = (Topic) args.getSerializable("topic");
+        topic = (Topic) args.getSerializable("topic");
 
-        showToast(topic.title, Toast.LENGTH_SHORT);
+        setupViews();
     }
+
+    private void setupViews() {
+        swipeView = (SwipeView) findViewById(R.id.swipe);
+        swipeView.setOnRefreshListener(listener);
+        listView = (ListView) findViewById(R.id.list);
+        HeadView head = new HeadView(getActivity());
+        head.populate(topic, getImageFetcher());
+        listView.addHeaderView(head);
+        adapter = new CommentAdapter();
+        listView.setAdapter(adapter);
+    }
+
+    private final OnRefreshListener listener = new OnRefreshListener() {
+
+        @Override
+        public void onRefresh() {
+
+        }
+    };
 }

@@ -15,6 +15,14 @@ public class SwipeView extends SwipeRefreshLayout {
     }
 
     @Override
+    protected void onFinishInflate() {
+        setColorScheme(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean ret = super.onTouchEvent(event);
         LOG.debug("onTouchEvent:{}, ret = {}", event.getAction(), ret);
