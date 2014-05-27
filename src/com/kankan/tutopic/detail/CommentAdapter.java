@@ -1,33 +1,53 @@
 package com.kankan.tutopic.detail;
 
+import com.blackmoon.tutopic.R;
+
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 public class CommentAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
-        return 0;
+        return 10;
     }
 
     @Override
     public Object getItem(int position) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        return null;
+        ViewHold holder = null;
+        if (convertView == null) {
+            holder = new ViewHold();
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.comment_item, null);
+            holder.comment = (TextView) convertView.findViewById(R.id.comment);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHold) convertView.getTag();
+        }
+
+        holder.populate("xxxxx");
+
+        return convertView;
+    }
+
+    private static final class ViewHold {
+        TextView comment;
+
+        public void populate(String comm) {
+            comment.setText(comm);
+        }
     }
 
 }

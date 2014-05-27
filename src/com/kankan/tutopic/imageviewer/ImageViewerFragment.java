@@ -1,6 +1,7 @@
 package com.kankan.tutopic.imageviewer;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +9,15 @@ import android.view.ViewGroup;
 import com.blackmoon.tutopic.R;
 import com.kankan.tutopic.base.BaseFragment;
 import com.kankan.tutopic.data.Topic;
-import com.polites.android.GestureImageView;
 
 public class ImageViewerFragment extends BaseFragment {
-    GestureImageView imageView;
     private Topic topic;
+    private ViewPager pager;
+    private ImageAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.image_viewer, container, false);
+        return inflater.inflate(R.layout.image_pager, container, false);
     }
 
     @Override
@@ -29,7 +30,8 @@ public class ImageViewerFragment extends BaseFragment {
     }
 
     private void setupViews() {
-        imageView = (GestureImageView) findViewById(R.id.image);
-        getImageFetcher().loadImage(topic.poster, imageView);
+        pager = (ViewPager) findViewById(R.id.pager);
+        adapter = new ImageAdapter(getActivity(), getImageFetcher(), topic);
+        pager.setAdapter(adapter);
     }
 }
