@@ -2,8 +2,6 @@ package com.kankan.tutopic.featured;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +17,8 @@ import com.kankan.tutopic.data.Topic;
 import com.kankan.tutopic.detail.DetailActivity;
 import com.origamilabs.library.views.StaggeredGridView;
 import com.origamilabs.library.views.StaggeredGridView.OnItemClickListener;
+import com.origamilabs.library.views.SwipeRefreshLayout;
+import com.origamilabs.library.views.SwipeRefreshLayout.OnRefreshListener;
 
 public class FeatureFragment extends BaseFragment {
     private static final Logger LOG = Logger.getLogger(FeatureFragment.class);
@@ -58,7 +58,6 @@ public class FeatureFragment extends BaseFragment {
     private void setupViews() {
         staggeredGridView = (StaggeredGridView) findViewById(R.id.staggeredGridView);
         staggeredGridView.setOnItemClickListener(onItemclickListener);
-
         swipeContent = (SwipeRefreshLayout) findViewById(R.id.swipe);
         swipeContent.setOnRefreshListener(refreshListener);
     }

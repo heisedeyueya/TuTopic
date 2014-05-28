@@ -1,11 +1,11 @@
 package com.kankan.tutopic.views;
 
 import android.content.Context;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.kankan.logging.Logger;
+import com.origamilabs.library.views.SwipeRefreshLayout;
 
 public class SwipeView extends SwipeRefreshLayout {
     private static final Logger LOG = Logger.getLogger(SwipeView.class);

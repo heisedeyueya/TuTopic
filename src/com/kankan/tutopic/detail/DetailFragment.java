@@ -1,7 +1,6 @@
 package com.kankan.tutopic.detail;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import com.blackmoon.tutopic.R;
 import com.kankan.tutopic.base.BaseFragment;
 import com.kankan.tutopic.data.Topic;
 import com.kankan.tutopic.views.SwipeView;
+import com.origamilabs.library.views.SwipeRefreshLayout.OnRefreshListener;
 
 public class DetailFragment extends BaseFragment {
     private SwipeView swipeView;
