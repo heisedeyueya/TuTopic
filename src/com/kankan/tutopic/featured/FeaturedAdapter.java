@@ -1,5 +1,7 @@
 package com.kankan.tutopic.featured;
 
+import java.util.ArrayList;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,25 +15,41 @@ import com.kankan.tutopic.cache.ImageFetcher;
 import com.kankan.tutopic.data.Featured;
 import com.kankan.tutopic.data.Topic;
 
-public class FeatureedAdapter extends BaseAdapter {
-    private static Logger LOG = Logger.getLogger(FeatureedAdapter.class);
+public class FeaturedAdapter extends BaseAdapter {
+    private static Logger LOG = Logger.getLogger(FeaturedAdapter.class);
 
-    Featured featured;
+    ArrayList<Topic> topics;
     ImageFetcher fetcher;
 
-    public FeatureedAdapter(Featured featured, ImageFetcher fetcher) {
-        this.featured = featured;
+    public FeaturedAdapter(ImageFetcher fetcher) {
         this.fetcher = fetcher;
+        topics = new ArrayList<Topic>();
+    }
+
+    public void append(Featured featured) {
+        for (Topic t : featured.items) {
+            topics.add(t);
+            notifyDataSetChanged();
+        }
+    }
+
+    public void refresh(Featured featured) {
+        clear();
+        append(featured);
+    }
+
+    public void clear() {
+        topics.clear();
     }
 
     @Override
     public int getCount() {
-        return featured.items == null ? 0 : featured.items.length;
+        return topics.size();
     }
 
     @Override
     public Topic getItem(int position) {
-        return featured.items == null ? null : featured.items[position];
+        return topics.get(position);
     }
 
     @Override
