@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.blackmoon.tutopic.R;
 import com.kankan.tutopic.base.BaseFragment;
-import com.kankan.tutopic.data.Topic;
+import com.kankan.tutopic.model.Topic;
 import com.kankan.tutopic.views.SwipeView;
+import com.vjson.tutopic.R;
 
 public class DetailFragment extends BaseFragment {
     private SwipeView swipeView;

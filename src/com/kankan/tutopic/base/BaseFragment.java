@@ -12,12 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.blackmoon.tutopic.R;
 import com.kankan.logging.Logger;
 import com.kankan.tutopic.app.BaseApplication;
 import com.kankan.tutopic.cache.ImageFetcher;
 import com.kankan.tutopic.util.UIHelper;
 import com.umeng.analytics.MobclickAgent;
+import com.vjson.tutopic.R;
 
 public abstract class BaseFragment extends Fragment {
     private static final Logger LOG = Logger.getLogger(BaseFragment.class);

@@ -9,11 +9,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
 
-import com.blackmoon.tutopic.R;
 import com.kankan.logging.Logger;
 import com.kankan.tutopic.app.ActivityManager;
 import com.kankan.tutopic.util.UIHelper;
 import com.umeng.analytics.MobclickAgent;
+import com.vjson.tutopic.R;
 
 public class BaseActivity extends FragmentActivity {
     private static final Logger LOG = Logger.getLogger(BaseActivity.class);

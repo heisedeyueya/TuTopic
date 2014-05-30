@@ -51,6 +51,7 @@ public class ScaleImageView extends ImageView {
     @Override
     public void setImageDrawable(Drawable d) {
         super.setImageDrawable(d);
+
         if (imageChangeListener != null)
             imageChangeListener.changed((d == null));
     }

@@ -9,16 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.blackmoon.tutopic.R;
 import com.kankan.logging.Logger;
 import com.kankan.tutopic.base.BaseFragment;
 import com.kankan.tutopic.data.DataProxy;
-import com.kankan.tutopic.data.Featured;
-import com.kankan.tutopic.data.Topic;
 import com.kankan.tutopic.detail.DetailActivity;
+import com.kankan.tutopic.model.Featured;
+import com.kankan.tutopic.model.Topic;
 import com.origamilabs.library.views.StaggeredGridView;
 import com.origamilabs.library.views.StaggeredGridView.OnItemClickListener;
 import com.origamilabs.library.views.StaggeredGridView.OnScrollListener;
+import com.vjson.tutopic.R;
 
 public class FeatureFragment extends BaseFragment {
     private static final Logger LOG = Logger.getLogger(FeatureFragment.class);
