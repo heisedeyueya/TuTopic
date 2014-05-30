@@ -9,11 +9,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.blackmoon.tutopic.R;
 import com.kankan.logging.Logger;
 import com.kankan.tutopic.cache.ImageFetcher;
-import com.kankan.tutopic.data.Featured;
-import com.kankan.tutopic.data.Topic;
+import com.kankan.tutopic.cache.OnLoadImageListener;
+import com.kankan.tutopic.model.Featured;
+import com.kankan.tutopic.model.Topic;
+import com.vjson.tutopic.R;
 
 public class FeaturedAdapter extends BaseAdapter {
     private static Logger LOG = Logger.getLogger(FeaturedAdapter.class);
@@ -81,6 +82,13 @@ public class FeaturedAdapter extends BaseAdapter {
         private void populate(ImageFetcher fetcher, Topic tp, int position) {
             if (tp != null) {
                 fetcher.loadImage(tp.poster, image);
+                fetcher.setImageLoadListener(new OnLoadImageListener() {
+
+                    @Override
+                    public void onLoadCompleted(String imageUrl, ImageView targetView, int state) {
+                        
+                    }
+                });
                 title.setText(tp.title);
             } else {
                 LOG.warn("topic == null, position={}", position);

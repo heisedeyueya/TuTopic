@@ -1,10 +1,5 @@
 package com.kankan.tutopic.detail;
 
-import com.blackmoon.tutopic.R;
-import com.kankan.tutopic.cache.ImageFetcher;
-import com.kankan.tutopic.data.Topic;
-import com.kankan.tutopic.imageviewer.ImgaeViewerActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -12,6 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.kankan.tutopic.cache.ImageFetcher;
+import com.kankan.tutopic.imageviewer.ImgaeViewerActivity;
+import com.kankan.tutopic.model.Topic;
+import com.vjson.tutopic.R;
 
 public class HeadView extends RelativeLayout {
     private ImageView imageview;

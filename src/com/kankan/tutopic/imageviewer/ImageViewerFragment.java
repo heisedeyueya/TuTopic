@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.blackmoon.tutopic.R;
 import com.kankan.tutopic.base.BaseFragment;
-import com.kankan.tutopic.data.Topic;
+import com.kankan.tutopic.model.Topic;
+import com.vjson.tutopic.R;
 
 public class ImageViewerFragment extends BaseFragment {
     private Topic topic;

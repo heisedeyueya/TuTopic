@@ -1,12 +1,12 @@
 package com.kankan.tutopic.detail;
 
-import com.blackmoon.tutopic.R;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.vjson.tutopic.R;
 
 public class CommentAdapter extends BaseAdapter {
 

@@ -3,6 +3,7 @@ package com.kankan.tutopic.data;
 import java.lang.reflect.Type;
 
 import com.google.gson.reflect.TypeToken;
+import com.kankan.tutopic.model.Featured;
 
 public class DataProxy {
     // public static final String SERVER_URL = "http://maho.anime.m.kankan.com/"; // 内网

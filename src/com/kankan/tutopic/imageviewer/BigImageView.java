@@ -1,16 +1,16 @@
 package com.kankan.tutopic.imageviewer;
 
-import com.blackmoon.tutopic.R;
-import com.kankan.tutopic.cache.ImageFetcher;
-import com.polites.android.GestureImageView;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.kankan.tutopic.cache.ImageFetcher;
+import com.vjson.tutopic.R;
+
 public class BigImageView extends RelativeLayout {
-    GestureImageView imageView;
+    ImageView imageView;
 
     public BigImageView(Context context) {
         this(context, null);
@@ -24,7 +24,7 @@ public class BigImageView extends RelativeLayout {
     }
 
     private void setupViews() {
-        imageView = (GestureImageView) findViewById(R.id.image);
+        imageView = (ImageView) findViewById(R.id.image);
     }
 
     public void loadImage(String url, ImageFetcher fetcher) {

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kankan.tutopic.cache.ImageFetcher;
-import com.kankan.tutopic.data.Topic;
+import com.kankan.tutopic.model.Topic;
 
 public class ImageAdapter extends PagerAdapter {
     private Context context;

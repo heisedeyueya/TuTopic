@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.blackmoon.tutopic"
+    package="com.vjson.tutopic"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -34,6 +34,13 @@
             android:name="com.kankan.tutopic.imageviewer.ImgaeViewerActivity"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="0x1070000C" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="538823ac56240b4db600305f" />
     </application>
 
 </manifest>
